@@ -1,0 +1,17 @@
+{
+  "presets": ["env", "react"],
+  "plugins": [
+    "transform-class-properties",
+    "transform-regenerator",
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "lib": "./src/lib",
+          "components": "./src/components"
+        }
+      }
+    ]
+  ]
+}
