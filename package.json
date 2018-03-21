@@ -2,7 +2,10 @@
   "name": "pokedex-2.0",
   "version": "1.0.0",
   "description": "Playing with React suspense api",
-  "keywords": ["react", "suspense"],
+  "keywords": [
+    "react",
+    "suspense"
+  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
