@@ -8,16 +8,32 @@ const createFetcher = createResource(async function fetchPokemons() {
 })
 
 export default function PokemonList({ cache, onChange }) {
-  const pokemons = createFetcher(cache)
+  const data = createFetcher(cache)
+  const pokemons = parseData(data)
   return (
     <div>
-      {pokemons &&
-        pokemons.results &&
-        pokemons.results.map(pokemon => (
-          <div key={pokemon.name} onClick={() => onChange(pokemon.name)}>
-            {pokemon.name}
-          </div>
-        ))}
+      {pokemons.map(pokemon => (
+        <div key={pokemon.name} onClick={() => onChange(pokemon)}>
+          {pokemon.name}
+        </div>
+      ))}
     </div>
   )
+}
+
+function parseData(pokemons) {
+  return (
+    pokemons &&
+    pokemons.results &&
+    pokemons.results.map(pokemon => ({
+      name: pokemon.name,
+      id: extractId(pokemon.url)
+    }))
+  )
+}
+
+function extractId(url) {
+  const list = url.split("/")
+  const id = list.pop()
+  return id ? id : list.pop()
 }

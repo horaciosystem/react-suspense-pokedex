@@ -2,16 +2,16 @@ import React, { Component, Fragment } from "react"
 import { createResource } from "simple-cache-provider"
 import styled from "react-emotion"
 
-const createFetcher = createResource(async function fetchDetails(name) {
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`)
+const createFetcher = createResource(async function fetchDetails(id) {
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
   return await res.json()
 })
 
-export default function PokemonDetails({ cache, name }) {
-  const data = createFetcher(cache, name)
+export default function PokemonDetails({ cache, pokemon }) {
+  const data = createFetcher(cache, pokemon.id)
   const stats = parseStats(data)
   return stats.map(stat => (
-    <li key={stat.name}>{`${stat.name}: ${stat.value}`}</li>
+    <li key={stat.stat}>{`${stat.stat}: ${stat.value}`}</li>
   ))
 }
 
@@ -19,7 +19,7 @@ function parseStats(data) {
   return (
     data &&
     data.stats.map(statistic => ({
-      name: statistic.stat.name,
+      stat: statistic.stat.name,
       value: statistic.base_stat
     }))
   )
