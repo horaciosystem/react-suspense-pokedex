@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react"
 import { createResource } from "simple-cache-provider"
-import styled from "react-emotion"
+import styled from "styled-components"
+import PokemonListItem from "components/PokemonListItem"
 
 const createFetcher = createResource(async function fetchPokemons() {
   const res = await fetch("https://pokeapi.co/api/v2/pokemon/")
@@ -13,9 +14,11 @@ export default function PokemonList({ cache, onChange }) {
   return (
     <div>
       {pokemons.map(pokemon => (
-        <div key={pokemon.name} onClick={() => onChange(pokemon)}>
-          {pokemon.name}
-        </div>
+        <PokemonListItem
+          key={pokemon.name}
+          pokemon={pokemon}
+          onChange={onChange}
+        />
       ))}
     </div>
   )
