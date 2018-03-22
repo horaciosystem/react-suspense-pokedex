@@ -1,7 +1,7 @@
 import React, { createContext } from "react"
 import ReactDOM from "react-dom"
 import "babel-polyfill"
-import Main from "./main"
+import Main from "components/Main"
 
 ReactDOM.render(
   <React.unstable_AsyncMode>
