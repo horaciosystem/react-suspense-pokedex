@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react"
 import { createResource } from "simple-cache-provider"
-import styled from "react-emotion"
+import styled from "styled-components"
 
 const createFetcher = createResource(async function fetchDetails(id) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon-form/${id}/`)
