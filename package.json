@@ -34,10 +34,9 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "emotion": "^9.0.2",
     "react": "^16.4.0-alpha.0911da3",
     "react-dom": "^16.4.0-alpha.0911da3",
-    "react-emotion": "^9.0.2",
-    "simple-cache-provider": "^0.2.1"
+    "simple-cache-provider": "^0.2.1",
+    "styled-components": "^3.2.3"
   }
 }
