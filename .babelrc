@@ -9,7 +9,8 @@
         "root": ["./src"],
         "alias": {
           "lib": "./src/lib",
-          "components": "./src/components"
+          "components": "./src/components",
+          "theme": "./src/theme"
         }
       }
     ]
