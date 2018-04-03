@@ -1,26 +1,31 @@
-import React, { Component, Fragment } from "react"
+import React from "react"
 import { createResource } from "simple-cache-provider"
 import styled from "styled-components"
 import PokemonListItem from "components/PokemonListItem"
 
+const ListContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 60%;
+`
+
 const createFetcher = createResource(async function fetchPokemons() {
   const res = await fetch("https://pokeapi.co/api/v2/pokemon/")
+
   return await res.json()
 })
 
-export default function PokemonList({ cache, onChange }) {
+export default function PokemonList({ cache }) {
   const data = createFetcher(cache)
   const pokemons = parseData(data)
+
   return (
-    <div>
+    <ListContainer>
       {pokemons.map(pokemon => (
-        <PokemonListItem
-          key={pokemon.name}
-          pokemon={pokemon}
-          onChange={onChange}
-        />
+        <PokemonListItem key={pokemon.name} pokemon={pokemon} />
       ))}
-    </div>
+    </ListContainer>
   )
 }
 
@@ -38,5 +43,6 @@ function parseData(pokemons) {
 function extractId(url) {
   const list = url.split("/")
   const id = list.pop()
+
   return id ? id : list.pop()
 }

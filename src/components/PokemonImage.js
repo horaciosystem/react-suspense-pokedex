@@ -1,13 +1,14 @@
-import React, { Component, Fragment } from "react"
+import React, { Component } from "react"
 import { createResource } from "simple-cache-provider"
-import styled from "styled-components"
+import { withCache } from "lib"
 
 const createFetcher = createResource(async function fetchDetails(id) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon-form/${id}/`)
+
   return await res.json()
 })
 
-export default class PokemonImage extends Component {
+export class PokemonImage extends Component {
   state = {
     viewPerspective: "front_default"
   }
@@ -19,6 +20,8 @@ export default class PokemonImage extends Component {
     const { viewPerspective } = this.state
     const image = data.sprites[viewPerspective]
 
-    return <img src={image} />
+    return <img src={image} alt="pokemon" />
   }
 }
+
+export default withCache(PokemonImage)

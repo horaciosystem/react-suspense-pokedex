@@ -3,6 +3,7 @@
   "plugins": [
     "transform-class-properties",
     "transform-regenerator",
+    "@babel/plugin-proposal-pipeline-operator",
     [
       "module-resolver",
       {

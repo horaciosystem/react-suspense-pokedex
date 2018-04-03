@@ -1,0 +1,24 @@
+html,
+#root {
+  width: 100%;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Bungee", cursive;
+  margin: 0;
+  overflow-y: auto;
+  width: 100%;
+}
+
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}

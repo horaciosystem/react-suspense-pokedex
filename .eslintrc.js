@@ -1,26 +1,36 @@
 module.exports = {
-  extends: ["standard", "plugin:jest/recommended", "prettier", "plugin:jsx-a11y/recommended"],
-  plugins: ["react", "jest", "prettier", "jsx-a11y"],
-  env: {
-    "jest/globals": true
-  },
+  extends: [
+    "eslint:recommended",
+    "defaults/configurations/google",
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "prettier"
+  ],
+  plugins: ["babel", "react", "jest", "prettier", "jsx-a11y"],
   rules: {
-    "react/jsx-uses-vars": "error",
-    "react/jsx-uses-react": "error",
-    "react/jsx-no-undef": "error",
-    "react/react-in-jsx-scope": "error",
-    "no-unused-vars": ["error", { vars: "all", args: "after-used", ignoreRestSiblings: true }],
-    "prettier/prettier": [
-      "error",
+    "require-jsdoc": [
+      2,
       {
-        semi: false
+        require: {
+          FunctionDeclaration: false,
+          MethodDefinition: false,
+          ClassDeclaration: false
+        }
       }
-    ]
+    ],
+    "react/prop-types": 0,
+    "babel/new-cap": 1,
+    "babel/no-invalid-this": 0,
+    "babel/quotes": 1
+  },
+  globals: {
+    fetch: true
   },
   parser: "babel-eslint",
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
+      modules: true
     }
   }
 }

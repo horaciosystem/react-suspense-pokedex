@@ -1,5 +1,6 @@
 export default {
   color: {
-    lolou: "#280A24"
+    white: "#FFFFFF",
+    wineBerry: "#341134"
   }
 }
