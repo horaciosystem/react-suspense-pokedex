@@ -4,6 +4,7 @@ import theme from "theme"
 import Loader from "components/Loader"
 import PokemonImage from "components/PokemonImage"
 import PokemonDetails from "components/PokemonDetails"
+import Button from "components/common/Button"
 
 const Card = styled.div`
   background-color: ${theme.color.white};
@@ -46,7 +47,7 @@ export default class PokemonListItem extends Component {
             <PokemonImage pokemon={pokemon} />
           </Loader>
         </div>
-        <button onClick={this.handleChangeExpanded}>{detailText}</button>
+        <Button onClick={this.handleChangeExpanded}>{detailText}</Button>
         {isExpanded && (
           <Loader>
             <PokemonDetails pokemon={pokemon} />

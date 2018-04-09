@@ -8,7 +8,7 @@ import Loader from "components/Loader"
 const PokemonsLoader = withCache(PokemonList)
 
 const Container = styled.div`
-  background-color: ${theme.color.wineBerry};
+  background-color: ${theme.color.purpleDarken};
   display: flex;
   justify-content: center;
 `

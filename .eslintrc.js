@@ -1,12 +1,12 @@
 module.exports = {
   extends: [
-    "eslint:recommended",
-    "defaults/configurations/google",
-    "plugin:react/recommended",
+    "standard",
     "plugin:jest/recommended",
-    "prettier"
+    "prettier",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/errors"
   ],
-  plugins: ["babel", "react", "jest", "prettier", "jsx-a11y"],
+  plugins: ["react", "jest", "prettier", "jsx-a11y"],
   rules: {
     "require-jsdoc": [
       2,

@@ -22,3 +22,12 @@ body {
 *:after {
   box-sizing: border-box;
 }
+
+button,
+a {
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+}

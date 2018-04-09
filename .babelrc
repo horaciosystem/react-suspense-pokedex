@@ -1,9 +1,9 @@
 {
   "presets": ["env", "react"],
   "plugins": [
+    "lodash",
     "transform-class-properties",
     "transform-regenerator",
-    "@babel/plugin-proposal-pipeline-operator",
     [
       "module-resolver",
       {
