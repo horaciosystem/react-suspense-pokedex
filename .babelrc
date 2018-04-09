@@ -11,7 +11,8 @@
         "alias": {
           "lib": "./src/lib",
           "components": "./src/components",
-          "theme": "./src/theme"
+          "theme": "./src/theme",
+          "assets": "./src/assets"
         }
       }
     ]

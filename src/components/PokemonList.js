@@ -1,6 +1,7 @@
 import React from "react"
 import { createResource } from "simple-cache-provider"
 import styled from "styled-components"
+import { withCache } from "lib"
 import PokemonListItem from "components/PokemonListItem"
 
 const ListContainer = styled.div`
@@ -16,7 +17,7 @@ const createFetcher = createResource(async function fetchPokemons() {
   return await res.json()
 })
 
-export default function PokemonList({ cache }) {
+export function PokemonList({ cache }) {
   const data = createFetcher(cache)
   const pokemons = parseData(data)
 
@@ -28,6 +29,8 @@ export default function PokemonList({ cache }) {
     </ListContainer>
   )
 }
+
+export default withCache(PokemonList)
 
 function parseData(pokemons) {
   return (

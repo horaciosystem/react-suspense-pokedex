@@ -1,5 +1,5 @@
 import React, { Timeout } from "react"
-import Placeholder from "components/Placeholder"
+import Placeholder from "components/common/Placeholder"
 
 export default function Loader({
   ms = 1000,

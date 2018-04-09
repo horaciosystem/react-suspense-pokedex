@@ -1,5 +1,7 @@
 module.exports = {
   extends: [
+    "eslint:recommended",
+    "plugin:import/errors",
     "standard",
     "plugin:jest/recommended",
     "prettier",
@@ -21,7 +23,12 @@ module.exports = {
     "react/prop-types": 0,
     "babel/new-cap": 1,
     "babel/no-invalid-this": 0,
-    "babel/quotes": 1
+    "babel/quotes": 1,
+    "import/no-unresolved": [2, { commonjs: true, amd: true }],
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2
   },
   globals: {
     fetch: true
