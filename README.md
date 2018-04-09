@@ -11,4 +11,4 @@ A pokedex made with the new react suspense api just for learning purposes.
 * [x] Lodash
 * [x] Jest and Enzyme
 
-![](./src/assets/images/layout.png)
+![](./layout.png)
